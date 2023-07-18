@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <title>Météo Surf Biscarrosse</title>
+  <style>
+  
+  body {
+      background-image: url('1689510134853.jpg');
+      background-size: cover; /* pour ajuster la taille de l'image à la fenêtre du navigateur */
+      background-repeat: no-repeat; /* pour éviter la répétition de l'image */
+    }
+    table {
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+    }
+
+    th {
+      background-color: lightgray;
+    }
+
+	
+	
+	
+    td {
+      padding: 5px;
+      text-align: center;
+      // width: 50px; /* Taille fixe pour les cellules */
+	  background-color: white;
+    }
+
+    .highTide {
+      font-weight: bold;
+    }
+
+    .waveHeight-0 { background-color: #D4E6F1; } /* Bleu */
+    .waveHeight-1 { background-color: #3498DB; } /* Bleu clair */
+    .waveHeight-2 { background-color: #58D68D; } /* Vert */
+    .waveHeight-3 { background-color: #F7DC6F; } /* Jaune */
+    .waveHeight-4 { background-color: #F5B041; } /* Orange */
+    .waveHeight-5 { background-color: #D35400; } /* Orange-rouge */
+    .waveHeight-6 { background-color: #E74C3C; } /* Rouge */
+  </style>
+</head>
+<body>
+  <h1>Météo Surf Biscarrosse</h1>
+  <table id="waveData">
+    <thead>
+      <tr>
+        <th class="date-cell" colspan="25"></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th>00h</th>
+        <th>01h</th>
+        <th>02h</th>
+        <th>03h</th>
+        <th>04h</th>
+        <th>05h</th>
+        <th>06h</th>
+        <th>07h</th>
+        <th>08h</th>
+        <th>09h</th>
+        <th>10h</th>
+        <th>11h</th>
+        <th>12h</th>
+        <th>13h</th>
+        <th>14h</th>
+        <th>15h</th>
+        <th>16h</th>
+        <th>17h</th>
+        <th>18h</th>
+        <th>19h</th>
+        <th>20h</th>
+        <th>21h</th>
+        <th>22h</th>
+        <th>23h</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Vague (m)</th>
+<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+      <tr>
+        <th>Période (s)</th>
+		<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+      <tr>
+        <th>Direction de la houle</th>
+		<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+      <tr>
+        <th>Direction du vent</th>
+		<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+      <tr>
+        <th>Puissance (kW)</th>
+		<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+      <tr>
+        <th>Vitesse du vent</th>
+		<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+      <tr>
+        <th>Qualité de la houle /20</th>
+		<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+    </tbody>
+  </table>
+
+  
+  
+  
+  <table id="waveDataTomorrow">
+    <thead>
+      <tr>
+        <th class="date-cell-tomorrow" colspan="25"></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th>00h</th>
+        <th>01h</th>
+        <th>02h</th>
+        <th>03h</th>
+        <th>04h</th>
+        <th>05h</th>
+        <th>06h</th>
+        <th>07h</th>
+        <th>08h</th>
+        <th>09h</th>
+        <th>10h</th>
+        <th>11h</th>
+        <th>12h</th>
+        <th>13h</th>
+        <th>14h</th>
+        <th>15h</th>
+        <th>16h</th>
+        <th>17h</th>
+        <th>18h</th>
+        <th>19h</th>
+        <th>20h</th>
+        <th>21h</th>
+        <th>22h</th>
+        <th>23h</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Vague (m)</th>
+<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+      <tr>
+        <th>Période (s)</th>
+		<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+      <tr>
+        <th>Direction de la houle</th>
+		<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+      <tr>
+        <th>Direction du vent</th>
+		<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+      <tr>
+        <th>Puissance (kW)</th>
+		<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+      <tr>
+        <th>Vitesse du vent</th>
+		<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+      <tr>
+        <th>Qualité de la houle /20</th>
+		<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+    </tbody>
+  </table>
+  
+  <table id="waveData2">
+    <thead>
+      <tr>
+        <th class="date-cell-2" colspan="25"></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th>00h</th>
+        <th>01h</th>
+        <th>02h</th>
+        <th>03h</th>
+        <th>04h</th>
+        <th>05h</th>
+        <th>06h</th>
+        <th>07h</th>
+        <th>08h</th>
+        <th>09h</th>
+        <th>10h</th>
+        <th>11h</th>
+        <th>12h</th>
+        <th>13h</th>
+        <th>14h</th>
+        <th>15h</th>
+        <th>16h</th>
+        <th>17h</th>
+        <th>18h</th>
+        <th>19h</th>
+        <th>20h</th>
+        <th>21h</th>
+        <th>22h</th>
+        <th>23h</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Vague (m)</th>
+<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+      <tr>
+        <th>Période (s)</th>
+		<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+      <tr>
+        <th>Direction de la houle</th>
+		<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+      <tr>
+        <th>Direction du vent</th>
+		<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+      <tr>
+        <th>Puissance (kW)</th>
+		<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+      <tr>
+        <th>Vitesse du vent</th>
+		<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+      <tr>
+        <th>Qualité de la houle /20</th>
+		<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    // Fonction de calcul de la puissance de la houle en kW
+    function calculateWavePower(height, period) {
+      var density = 1020; // Densité de l'eau en kg/m³
+      var accelerationDueToGravity = 9.81; // Accélération due à la gravité en m/s²
+
+      // Calcul de la puissance de la houle en kW
+ var power = Math.floor(0.5 * density * accelerationDueToGravity * Math.pow(height, 2) * period / 1000);
+  return power;
+}
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var waveApiURL = 'https://marine-api.open-meteo.com/v1/marine?latitude=44.4485&longitude=-1.2471&hourly=wave_height,wave_period,swell_wave_direction&timezone=Europe%2FLondon';
+      var windApiURL = 'https://api.open-meteo.com/v1/forecast?latitude=44.4485&longitude=-1.2471&hourly=windspeed_10m,winddirection_10m&timezone=Europe%2FLondon';
+
+      Promise.all([fetch(waveApiURL), fetch(windApiURL)])
+        .then(function(responses) {
+          return Promise.all(responses.map(function(response) {
+            return response.json();
+          }));
+        })
+        .then(function(data) {
+          var waveData = data[0].hourly;
+          var windData = data[1].hourly;
+
+          var waveHeight = waveData.wave_height.map(value => parseFloat(value).toFixed(1));
+          var wavePeriod = waveData.wave_period.map(value => parseFloat(value).toFixed(1));
+          var waveDirection = waveData.swell_wave_direction.map(value => value);
+          var windSpeed = windData.windspeed_10m.map(value => Math.round(parseFloat(value)));
+          var windDirection = windData.winddirection_10m.map(value => value);
+          var time = waveData.time.slice(0, 32).map(dateTime => new Date(dateTime).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' }));
+          var tomorrow = new Date();
+		  tomorrow.setDate(tomorrow.getDate() + 1);
+		 
+			
+		  var tomorrow2 = new Date();
+		  tomorrow2.setDate(tomorrow2.getDate() + 2);
+		  
+		  // Mise à jour de la date dans le tableau pour +2
+var dateCells2 = document.querySelectorAll('.date-cell-2');
+dateCells2.forEach(function(cell, index) {
+cell.textContent = tomorrow2.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
+});
+		  
+		  
+		 // Mise à jour de la date dans le tableau pour demain
+var dateCellsTomorrow = document.querySelectorAll('.date-cell-tomorrow');
+dateCellsTomorrow.forEach(function(cell, index) {
+cell.textContent = tomorrow.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
+});
+          // Mise à jour des hauteurs de vagues dans le tableau avec les classes CSS appropriées
+          var waveHeightElements = document.querySelectorAll('#waveData tbody tr:nth-child(1) td:not(:first-child)');
+          waveHeightElements.forEach(function(element, index) {
+            var height = parseFloat(waveHeight[index]);
+            var className = 'waveHeight-' + determineWaveHeightClass(height);
+            element.textContent = waveHeight[index];
+            element.classList.add(className);
+          });
+
+          // Fonction pour déterminer la classe CSS correspondant à la hauteur des vagues
+          function determineWaveHeightClass(height) {
+            if (height < 1.4) {
+              return '0';
+            } else if (height >= 1.4 && height < 2) {
+              return '1';
+            } else if (height >= 2 && height < 2.6) {
+              return '2';
+            } else if (height >= 2.6 && height < 3.2) {
+              return '3';
+            } else if (height >= 3.2 && height < 3.8) {
+              return '4';
+            } else if (height >= 3.8 && height < 4.4) {
+              return '5';
+            } else if (height >= 4.4 && height < 5) {
+              return '6';
+            } else {
+              return '7';
+            }
+          }
+
+          // Mise à jour des périodes de vagues dans le tableau
+          var wavePeriodElements = document.querySelectorAll('#waveData tbody tr:nth-child(2) td:not(:first-child)');
+          wavePeriodElements.forEach(function(element, index) {
+            element.textContent = wavePeriod[index];
+          });
+
+          // Mise à jour de la date dans le tableau
+          var dateCells = document.querySelectorAll('.date-cell');
+          dateCells.forEach(function(cell, index) {
+            cell.textContent = time[index];
+          });
+
+        // Mise à jour des directions de vagues dans le tableau
+var waveDirectionElements = document.querySelectorAll('#waveData tbody tr:nth-child(3) td:not(:first-child)');
+waveDirectionElements.forEach(function(element, index) {
+  var span = document.createElement('span');
+  var angle = (waveDirection[index] + 90) % 360; // Ajout de 90 degrés et correction de l'angle
+  span.style.transform = 'rotate(' + angle + 'deg)';
+  span.style.width = '10px';
+  span.style.height = '10px';
+  span.style.border = '1px solid black';
+  span.style.display = 'inline-block';
+  element.appendChild(span);
+});
+
+// Mise à jour des flèches dans le tableau direction de la houle
+var arrowElements = document.querySelectorAll('#waveData tbody tr:nth-child(3) td:not(:first-child)');
+arrowElements.forEach(function(element, index) {
+  var arrow = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  var angle = (waveDirection[index] + 90) % 360; // Ajout de 90 degrés et correction de l'angle
+  arrow.setAttribute("width", "10");
+  arrow.setAttribute("height", "10");
+  arrow.style.transform = 'rotate(' + angle + 'deg)';
+  arrow.innerHTML = '<path d="M0,5 L10,5 M5,0 L10,5 L5,10" style="fill:none;stroke:black;stroke-width:1"/>';
+  element.innerHTML = ''; // Supprimer le contenu précédent de la cellule
+  element.appendChild(arrow);
+});
+
+          // Fonction de génération d'une flèche SVG pour la direction du vent
+          function generateWindArrow(direction) {
+            var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            svg.setAttribute("width", "10");
+            svg.setAttribute("height", "10");
+            svg.style.transform = 'rotate(' + direction + 'deg)';
+            svg.innerHTML = '<path d="M0,5 L10,5 M5,0 L10,5 L5,10" style="fill:none;stroke:black;stroke-width:1"/>';
+
+            return svg;
+          }
+
+
+
+          // Mise à jour de la direction du vent dans le tableau
+          var windDirectionElements = document.querySelectorAll('#waveData tbody tr:nth-child(4) td:not(:first-child)');
+          windDirectionElements.forEach(function(element, index) {
+            var direction = windDirection[index];
+            var arrow = generateWindArrow(direction);
+            element.innerHTML = ''; // Supprimer le contenu précédent de la cellule
+            element.appendChild(arrow);
+
+            if (isOffshoreWind(direction)) {
+              element.classList.add('offshore');
+            } else {
+              element.classList.add('onshore');
+            }
+          });
+
+		            // Fonction de détermination du type de vent (offshore ou onshore)
+          function isOffshoreWind(direction) {
+            var oppositeDirection = (parseFloat(direction) + 180) % 360;
+            return oppositeDirection >= 180 && oppositeDirection <= 270;
+          }
+		  
+		  
+          // Mise à jour de la puissance de la houle dans le tableau
+          var wavePowerElements = document.querySelectorAll('#waveData tbody tr:nth-child(5) td:not(:first-child)');
+wavePowerElements.forEach(function(element, index) {
+  var wavePower = parseInt(calculateWavePower(waveHeight[index], wavePeriod[index]));
+  element.textContent = wavePower;
+});
+
+          // Mise à jour de la vitesse du vent dans le tableau
+          var windSpeedElements = document.querySelectorAll('#waveData tbody tr:nth-child(6) td:not(:first-child)');
+          windSpeedElements.forEach(function(element, index) {
+            element.textContent = windSpeed[index];
+          });
+
+          // Fonction de calcul de la qualité de la houle sur une échelle de 0 à 20
+          function calculateWaveQuality(height, period, direction, windSpeed, windDirection) {
+            var heightWeight = 0.3;
+            var periodWeight = 0.2;
+            var directionWeight = 0.2;
+            var windSpeedWeight = 0.15;
+            var windDirectionWeight = 0.15;
+
+            var normalizedHeight = height / 3;
+            var normalizedPeriod = period / 20;
+            var normalizedDirection = Math.cos((direction - 180) * Math.PI / 180) / 2 + 0.5;
+            var normalizedWindSpeed = 1 - (windSpeed / 20);
+            var normalizedWindDirection = Math.cos((windDirection - 180) * Math.PI / 180) / 2 + 0.5;
+
+            var waveQuality = (normalizedHeight * heightWeight + normalizedPeriod * periodWeight + normalizedDirection * directionWeight + normalizedWindSpeed * windSpeedWeight + normalizedWindDirection * windDirectionWeight) * 20;
+            return waveQuality.toFixed(1);
+          }
+
+          // Mise à jour de la qualité de la houle dans le tableau
+          var waveQualityElements = document.querySelectorAll('#waveData tbody tr:nth-child(7) td:not(:first-child)');
+          waveQualityElements.forEach(function(element, index) {
+            var quality = calculateWaveQuality(waveHeight[index], wavePeriod[index], waveDirection[index], windSpeed[index], windDirection[index]);
+            element.textContent = quality;
+            element.style.backgroundColor = 'rgb(' + Math.floor(255 * (1 - quality / 20)) + ', ' + Math.floor(255 * (quality / 20)) + ', 0)';
+          });
+			
+
+// Mise à jour de la période pour demain
+var wavePeriodElementsTomorrow = document.querySelectorAll('#waveDataTomorrow tbody tr:nth-child(2) td:not(:first-child)');
+wavePeriodElementsTomorrow.forEach(function(element, index) {
+var hourIndex = index + 24; // Index + 24 pour les données de demain
+var period = parseFloat(wavePeriod[hourIndex]);
+element.textContent = period;
+});
+ 
+		 
+
+
+// Mise à jour de la puissance pour demain
+var wavePowerElementsTomorrow = document.querySelectorAll('#waveDataTomorrow tbody tr:nth-child(5) td:not(:first-child)');
+wavePowerElementsTomorrow.forEach(function(element, index) {
+var hourIndex = index + 24; // Index + 24 pour les données de demain
+var power = parseInt(calculateWavePower(waveHeight[hourIndex], wavePeriod[hourIndex]));
+element.textContent = power;
+});
+// Mise à jour de la vitesse du vent pour demain
+var windSpeedElementsTomorrow = document.querySelectorAll('#waveDataTomorrow tbody tr:nth-child(6) td:not(:first-child)');
+windSpeedElementsTomorrow.forEach(function(element, index) {
+var hourIndex = index + 24; // Index + 24 pour les données de demain
+var speed = Math.round(parseFloat(windSpeed[hourIndex]));
+element.textContent = speed;
+});
+// Mise à jour de la qualité des vagues pour demain
+var waveQualityElementsTomorrow = document.querySelectorAll('#waveDataTomorrow tbody tr:nth-child(7) td:not(:first-child)');
+waveQualityElementsTomorrow.forEach(function(element, index) {
+var hourIndex = index + 24; // Index + 24 pour les données de demain
+var quality = calculateWaveQuality(waveHeight[hourIndex], wavePeriod[hourIndex], waveDirection[hourIndex], windSpeed[hourIndex], windDirection[hourIndex]);
+element.textContent = quality;
+element.style.backgroundColor = 'rgb(' + Math.floor(255 * (1 - quality / 20)) + ', ' + Math.floor(255 * (quality / 20)) + ', 0)';
+});
+// Mise à jour des directions de houle dans le tableau pour demain
+var waveDirectionElementsTomorrow = document.querySelectorAll('#waveDataTomorrow tbody tr:nth-child(3) td:not(:first-child)');
+waveDirectionElementsTomorrow.forEach(function(element, index) {
+  var span = document.createElement('span');
+  var angle = (waveDirection[index + 24] + 90) % 360; // Ajout de 90 degrés et correction de l'angle
+  span.style.transform = 'rotate(' + angle + 'deg)';
+  span.style.width = '10px';
+  span.style.height = '10px';
+  span.style.border = '1px solid black';
+  span.style.display = 'inline-block';
+  element.innerHTML = ''; // Supprimer le contenu précédent de la cellule
+  element.appendChild(span);
+});
+
+// Mise à jour des flèches dans le tableau direction de la houle pour demain
+var arrowElementsTomorrow = document.querySelectorAll('#waveDataTomorrow tbody tr:nth-child(3) td:not(:first-child)');
+arrowElementsTomorrow.forEach(function(element, index) {
+  var arrow = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  arrow.setAttribute("width", "10");
+  arrow.setAttribute("height", "10");
+  var angle = (waveDirection[index + 24] + 90) % 360; // Ajout de 90 degrés et correction de l'angle
+  arrow.style.transform = 'rotate(' + angle + 'deg)';
+  arrow.innerHTML = '<path d="M0,5 L10,5 M5,0 L10,5 L5,10" style="fill:none;stroke:black;stroke-width:1"/>';
+  element.innerHTML = ''; // Supprimer le contenu précédent de la cellule
+  element.appendChild(arrow);
+});
+
+          // Mise à jour des prévisions pour demain
+          var waveHeightElementsTomorrow = document.querySelectorAll('#waveDataTomorrow tbody tr:nth-child(1) td:not(:first-child)');
+          waveHeightElementsTomorrow.forEach(function(element, index) {
+            var hourIndex = index + 24; // Index + 24 pour les données de demain
+            var height = parseFloat(waveHeight[hourIndex]);
+            var className = 'waveHeight-' + determineWaveHeightClass(height);
+            element.textContent = waveHeight[hourIndex];
+            element.classList.add(className);
+          });
+        })
+        .catch(function(error) {
+          console.log('Une erreur est survenue :', error);
+        });
+    });
+
+
+var windDirectionTomorrow = document.querySelectorAll('#waveDataTomorrow tbody tr:nth-child(4) td:not(:first-child)');
+
+windDirectionTomorrow.forEach(function(element, index) {
+  var hourIndex = index + 24; // Index + 24 pour les données de demain
+  var windDirection = windData.winddirection_10m; // Données de direction du vent de l'API
+
+  // Vérifiez si l'index est valide avant d'accéder aux données
+  if (hourIndex < windDirection.length) {
+    var direction = windDirection[hourIndex];
+    element.textContent = direction;
+  } else {
+    // Gérez le cas où l'index dépasse la longueur des données de direction du vent
+    element.textContent = 'N/A'; // Par exemple, affichez "N/A" pour indiquer une donnée non disponible
+  }
+});
+  </script>
+</body>
+</html>
